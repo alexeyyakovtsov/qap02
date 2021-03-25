@@ -3,25 +3,6 @@ MAX_B3 = 3
 
 bucket_5 = bucket_3 = 0
 
-"""while True:
-    b1 = MAX_B1 #5
-
-    b1 = b1 - (MAX_B2 - b2) #2
-    b2 = MAX_B1 - b1 #3
-    print('b1 = ' + str(b1))
-    print('b2 = ' + str(b2))
-
-    if (b1 == 4):
-        break
-
-    b2 = 0 
-
-    b2 = b1 - b2 #2
-    print(b2)
-    b1 = b1 - b1 #0
-    print(b1)
-"""
-
 while bucket_5 != 4:
     print(f'Ведро 5л = {bucket_5}, Ведро 3л = {bucket_3}\n')
 
