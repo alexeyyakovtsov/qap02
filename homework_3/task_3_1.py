@@ -10,4 +10,3 @@ try:
 
 except ValueError:
     print('Ошибка - введено не число')
-
