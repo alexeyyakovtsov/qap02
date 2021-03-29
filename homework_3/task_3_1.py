@@ -13,7 +13,7 @@ try:
     if aa > 0 and bb > 0 and cc > 0 and dd > 0:
         for i in range(11):
             x.add_row([f'{aa} * {i} =', aa * i])
-            print(x)
+        print(x)
     else:
         print('Введеное значение отрицательно')
 
