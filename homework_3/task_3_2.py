@@ -1,8 +1,8 @@
-count_prog = int(input('Введите число студентов: '))
-
-l1 = ['программистов', 'программист', 'программиста']
-
 try:
+    count_prog = int(input('Введите число студентов: '))
+
+    l1 = ['программистов', 'программист', 'программиста']
+
     if count_prog >= 0:
         if count_prog == 0:
             print(f'{count_prog} {l1[0]}')
@@ -14,6 +14,8 @@ try:
             print(f'{count_prog} {l1[0]}')
         else:
             print(f'{count_prog} {l1[0]}')
+    else:
+        print('Введенное значение меньше 0')
 
 except ValueError:
     print('Введенное значение не является числом')

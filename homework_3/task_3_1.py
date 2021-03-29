@@ -1,5 +1,4 @@
-from prettytable import PrettyTable
-
+from prettytable import PrettyTable as pt
 
 try:
     aa = int(input('Введите число a: '))
@@ -7,7 +6,7 @@ try:
     cc = int(input('Введите число c: '))
     dd = int(input('Введите число d: '))
 
-    x = PrettyTable()
+    x = pt()
     x.field_names = ['Activity', 'Result', 'Activity2', 'Result2', 
                     'Activity3', 'Result3', 'Activity4', 'Result4']
 
