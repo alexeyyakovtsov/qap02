@@ -8,4 +8,4 @@ def other_reverse(number):
 b = reverse(input('Введите число '))
 st = other_reverse(input('Введиет число 2: '))
 print(b)
-print(st)
+print(st, sep='')
