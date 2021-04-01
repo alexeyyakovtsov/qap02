@@ -1,14 +1,17 @@
-import time
+from datetime import datetime
+
+start_time = datetime.now()
 
 def collac(number):
-    for i in range(1_000_000):
-        summa = 0
+    while number != 1:
+        print(number)
         if number % 2 == 0:
-            summa = number / 2
+            number = number / 2
         elif number % 2 == 1:
-            summa = number * 3 + 1
+            number = number * 3 + 1
         
-        return f'{number} -> {summa}'
+    print(number)
 
 a = collac(int(input('Введите число: ')))
-print(a)
+end_time = datetime.now()
+print('Duration: {}'.format(end_time - start_time))
