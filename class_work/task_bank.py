@@ -9,4 +9,4 @@ def bank_vklad(a):
     return vklad_years
 
 new_vklad = bank_vklad(int(input('Введите сумму: ')))
-print(new_vklad(10))
+print(new_vklad(int(input('Введите количество лет: '))))
