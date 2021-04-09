@@ -7,7 +7,7 @@ class WinDoor:
         self.square = self.x * self.y
         return self.square
 
-class Room:
+class Room(WinDoor):
     def __init__(self, x, y, z):
         WinDoor.__init__(self, x, y)
         self.z = z
@@ -25,10 +25,14 @@ class Room:
         for i in self.wd:
             new_square -= WinDoor.square(i)
         return new_square
- 
+
+    def roll_numb(self, w, h):
+        return self.workSurface() / (w * h)
+        
 
 r1 = Room(float(input('Введите ширину: ')), float(input('Введите длинну: ')), float(input('Введите высоту: ')))
 r1.addWD(1, 1) 
 r1.addWD(1, 1)
 r1.addWD(1, 2)
-print(f'Общая площадьв: {r1.workSurface()}')
+print(f'Общая площадь: {r1.workSurface()}')
+print(f'Количество рулонов: {r1.roll_numb(3, 4)}')
