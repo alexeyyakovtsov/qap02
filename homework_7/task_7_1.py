@@ -8,7 +8,7 @@ class Book:
         with open('homework_7/book.json', 'r') as book_file:
             return json.loads(book_file.read())
 
-    def add_book(self, id, name, author, pages, isbn):
+    def add_book(self, id, name, author, pages, isbn, flag):
         f = self.read_book_file()
         with open('homework_7/book.json', 'w') as file:
             data = {
@@ -16,7 +16,8 @@ class Book:
                     "name": name,
                     "author": author,
                     "pages": pages,
-                    "idbn": isbn
+                    "idbn": isbn,
+                    "flag": flag
                 }
             }
             f[id] = data[id]
@@ -32,11 +33,11 @@ class User(Book):
         f = self.read_book_file()
 
         for book in f:
-            if book == book_number and f[book_number]['isbn'] == True:
+            if book == book_number and f[book_number]['flag'] == True:
                 print('Книга уже забронирована')
-            elif book == book_number and f[book_number]['isbn'] == False:
+            elif book == book_number and f[book_number]['flag'] == False:
                 with open('homework_7/book.json', 'w') as w_file:
-                    f[book_number]["isbn"] = True
+                    f[book_number]["flag"] = True
                     json.dump(f, w_file, indent=4)
                 w_file.close()
                 print('Вы забронировали книгу')
@@ -45,4 +46,4 @@ class User(Book):
 a = User()
 a.booking(input('Введите номер книги: '))
 a.add_book(int(input('Ведите id книги: ')), input('Введите название книги: '), input('Введите автора книги: ')
-, input('Введите количество страниц: '), bool(input('Введите забронирована книга или нет (True or False): ')))
+, input('Введите количество страниц: '), input('Введите ISBN: '), bool(input('Введите флаг (True or False): ')))

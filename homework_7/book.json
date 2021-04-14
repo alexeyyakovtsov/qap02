@@ -3,18 +3,21 @@
         "name": "Master and Margarita",
         "author": "Bulgakov",
         "pages": "588",
-        "isbn": true
+        "isbn": "123456",
+        "flag": true
     },
     "2": {
         "name": "The Shining",
         "author": "S. King",
         "pages": "455",
-        "isbn": true
+        "isbn": "6666",
+        "flag": true
     },
     "3": {
         "name": "The Shining",
         "author": "S. King",
         "pages": "455",
-        "isbn": true
+        "isbn": "422424",
+        "flag": true
     }
 }
