@@ -8,14 +8,20 @@ class Book:
         with open('homework_7/book.json', 'r') as book_file:
             return json.loads(book_file.read())
 
-"""    def add_book(self, name, author, pages, isbn):
-        with open('homework_7/book.json', 'a') as file:
-            data = dict(zip(('name', 'author', 'pages', 'isbn'), (
-                name, author, pages, isbn
-            )))
-            json.dump(data, file, indent=2)
-            #file.write('\n')
-        file.close()"""
+    def add_book(self, id, name, author, pages, isbn):
+        f = self.read_book_file()
+        with open('homework_7/book.json', 'w') as file:
+            data = {
+                id: {
+                    "name": name,
+                    "author": author,
+                    "pages": pages,
+                    "idbn": isbn
+                }
+            }
+            f[id] = data[id]
+            json.dump(f, file, indent=4)
+        file.close()
 
 
 class User(Book):
@@ -35,5 +41,8 @@ class User(Book):
                 w_file.close()
                 print('Вы забронировали книгу')
 
+
 a = User()
 a.booking(input('Введите номер книги: '))
+a.add_book(int(input('Ведите id книги: ')), input('Введите название книги: '), input('Введите автора книги: ')
+, input('Введите количество страниц: '), bool(input('Введите забронирована книга или нет (True or False): ')))
